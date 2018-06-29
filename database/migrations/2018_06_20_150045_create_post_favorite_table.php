@@ -20,7 +20,7 @@ class CreatePostFavoriteTable extends Migration
             $table->timestamps();
             
             // 外部キー設定
-            $table->foreign('user_id')->references('id')->on('microposts')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('favorite_id')->references('id')->on('microposts')->onDelete('cascade');
             
             // post_idとfavorite_idの組み合わせの重複を許さない
